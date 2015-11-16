@@ -14,11 +14,16 @@ a:link {
 a:hover {
   text-decoration: none; }
 
-.footer {
+.btn {
+  border: solid 1px;
+  display: block;
+  padding: 0; }
+
+.locations {
   margin-top: 40px; }
-  .footer p {
+  .locations p {
     text-align: center; }
-    .footer p.address {
+    .locations p.address {
       font-size: 0.8em; }
 
 .page {
