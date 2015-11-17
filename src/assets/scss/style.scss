@@ -1,3 +1,32 @@
+// Simple media queries mixin base on bootstrap breakpoints
+@mixin mq($media) {
+  @if $media == "sm" {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @else if $media == "md" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+  @else if $media == "lg" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Variables
+$orage: #F26821;
+$white: #fff;
+$gray: #ddd;
+$gray-dark: #ccc;
+$green: #9cc03b;
+$base-radius: 3px;
+$subscribe-height: 38px;
+
+// Real deal!
 html {
   box-sizing: border-box;
 }
@@ -8,20 +37,86 @@ html {
 body {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
   font-size: 18px;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   &:link {
-    color: #F26821;
+    color: $orage;
   }
   &:hover {
     text-decoration: none;
   }
 }
 
-.footer {
-  margin-top: 40px;
+.btn {
+  border-radius: 30px;
+  border: solid 1px $gray-dark;
+  display: inline-block;
+  height: 60px;
+  margin: 0 5px;
+  position: relative;
+  text-decoration: none;
+  width: 60px;
+
+  span {
+    font-size: 0.8em;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 65px;
+    width: 60px;
+  }
+
+  &.waze {
+    background: url("/assets/images/ico-waze.png") no-repeat 50%;
+    background-size: 36px
+  }
+
+  &.map {
+    background: url("/assets/images/ico-map.png") no-repeat 50%;
+    background-size: 36px
+  }
+
+  &.phone {
+    background: url("/assets/images/ico-phone.png") no-repeat 50%;
+    background-size: 36px
+  }
+
+  &:visited {
+    color: $orage;
+  }
+
+  &:hover {
+    background-color: $gray;
+  }
+
+}
+
+.card {
+  border: solid 1px $gray;
+  border-radius: $base-radius;
+  margin-bottom: 20px;
+
+  &-body {
+    padding: 0 10px;
+  }
+
+  &-menu {
+    height: 83px;
+    margin-bottom: 20px
+  }
+
+  &-title {
+    background-color: $gray;
+    margin: 0;
+    padding: 5px 0;
+  }
+}
+
+.locations {
+  text-align: center;
 
   p {
     text-align: center;
@@ -33,28 +128,25 @@ a {
 }
 
 .page {
-  padding: 0 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  padding: 20px;
   width: 100%;
+
+  @include mq('sm') {
+    margin: 0 auto;
+    max-width: 500px;
+  }
 
   img {
     display: block;
     margin: 0 auto;
     width: 80%;
 
-    @media (min-width: 768px) {
+    @include mq('sm') {
       width: 400px;
     }
 
   }
 }
-
 
 .social-media {
   margin-top: 20px;
@@ -78,5 +170,45 @@ a {
       background-size: cover;
       margin-right: -10px;
     }
+  }
+}
+
+.subscribe {
+  margin: 30px 0;
+
+  .button,
+  .email {
+    -webkit-appearance: none;
+    border-radius: $base-radius;
+    border: solid 1px $gray-dark;
+    float: left;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    height: $subscribe-height;
+  }
+
+  .button {
+    background-color: $green;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border: none;
+    color: $white;
+    padding: 0 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .email {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: none;
+    padding: 0 105px 0 5px;
+    width: 99%;
+  }
+
+  .mc-field-group {
+    height: $subscribe-height;
+    position: relative;
   }
 }
