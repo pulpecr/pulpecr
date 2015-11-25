@@ -1,5 +1,6 @@
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  line-height: 1.5; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -9,6 +10,13 @@ body {
   font-size: 18px;
   margin: 0;
   padding: 0; }
+
+li {
+  margin-bottom: 10px; }
+  li ol {
+    margin-bottom: 20px; }
+    li ol li {
+      margin-bottom: 0; }
 
 a:link {
   color: #F26821; }
@@ -67,12 +75,15 @@ a:hover {
       font-size: 0.8em; }
 
 .page {
+  margin: 0 auto;
+  max-width: 500px;
   padding: 20px;
-  width: 100%; }
-  @media (min-width: 768px) {
-    .page {
-      margin: 0 auto;
-      max-width: 500px; } }
+  width: 100%;
+  word-break: break-word; }
+  @media (min-width: 992px) {
+    .tablet .page {
+      max-width: none;
+      width: 80%; } }
   .page img {
     display: block;
     margin: 0 auto;
@@ -80,6 +91,11 @@ a:hover {
     @media (min-width: 768px) {
       .page img {
         width: 400px; } }
+    .tablet .page img {
+      width: 100px; }
+      @media (min-width: 768px) {
+        .tablet .page img {
+          width: 200px; } }
 
 .social-media {
   margin-top: 20px;

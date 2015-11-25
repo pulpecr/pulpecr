@@ -29,6 +29,7 @@ $subscribe-height: 38px;
 // Real deal!
 html {
   box-sizing: border-box;
+  line-height: 1.5
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -39,6 +40,18 @@ body {
   font-size: 18px;
   margin: 0;
   padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+
+  ol {
+    margin-bottom: 20px;
+
+    li {
+      margin-bottom: 0;
+    }
+  }
 }
 
 a {
@@ -127,13 +140,19 @@ a {
   }
 }
 
+
 .page {
+  margin: 0 auto;
+  max-width: 500px;
   padding: 20px;
   width: 100%;
+  word-break: break-word;
 
-  @include mq('sm') {
-    margin: 0 auto;
-    max-width: 500px;
+  .tablet & {
+    @include mq('md') {
+      max-width: none;
+      width: 80%;
+    }
   }
 
   img {
@@ -143,6 +162,13 @@ a {
 
     @include mq('sm') {
       width: 400px;
+    }
+
+    .tablet & {
+      width: 100px;
+      @include mq('sm') {
+        width: 200px;
+      }
     }
 
   }
