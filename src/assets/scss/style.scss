@@ -128,6 +128,29 @@ a {
   }
 }
 
+.encuesta {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+
+  .page {
+    padding: 0;
+  }
+
+  iframe {
+    bottom: 0px;
+    height: 100%;
+    left: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+  }
+}
+
 .locations {
   text-align: center;
 
