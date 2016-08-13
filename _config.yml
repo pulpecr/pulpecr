@@ -1,8 +1,8 @@
 # Title, decription, tagline and URL for your site
 # Can be used in your theme by calling 'site.title' and so on
 title: Mini Market La Pulpe
-description: 
-tagline: 
+description:
+tagline:
 url: localhost:4000
 
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
@@ -14,7 +14,7 @@ destination: serve
 author:
   name: Freddy Montes
   email: freddymontes@gmail.com
-  bio: 
+  bio:
   twitter: twitter.com/fmontes
 
 # general setting for Jekyll
@@ -30,11 +30,11 @@ lsi: false
 limit_posts: 10
 
 # Permalink structure and pagination options
-relative_permalinks: true
-permalink: none
-paginate: 10
-paginate_path: 'page:num'
-excerpt_separator: '<!--more-->'
+#relative_permalinks: true
+#permalink: none
+#paginate: 10
+#paginate_path: 'page:num'
+#excerpt_separator: '<!--more-->'
 
 # Markdown library
 markdown: redcarpet
