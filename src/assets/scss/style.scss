@@ -274,22 +274,21 @@ input[type="email"] {
 
 .menu-tabs-sections {
   border: solid 1px $gray;
-  border-top: none;
+  margin-top: -1px;
   padding: 20px;
 }
 
 .menu-tab {
   background: url('../images/sprites.png') no-repeat;
-  border: solid 1px transparent;
-  border-bottom-color: $gray;
   color: $text-color;
   display: flex;
-  flex: 1;
   font-family: 'Amaranth', sans-serif;
   font-size: 13px;
   height: 67px;
   justify-content: center;
   text-decoration: none;
+  width: 67px;
+
 
   &:link {
     color: $black;
@@ -304,7 +303,7 @@ input[type="email"] {
 
   &.active {
     border: solid 1px $gray;
-    border-bottom-color: transparent;
+    border-bottom-color: $white;
   }
 
   &.arroz {

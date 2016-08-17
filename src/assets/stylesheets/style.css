@@ -196,27 +196,23 @@ input[type="email"] {
 
 .menu-tabs-sections {
   border: solid 1px #ddd;
-  border-top: none;
+  margin-top: -1px;
   padding: 20px; }
 
 .menu-tab {
   background: url("../images/sprites.png") no-repeat;
-  border: solid 1px transparent;
-  border-bottom-color: #ddd;
   color: #444;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   font-family: 'Amaranth', sans-serif;
   font-size: 13px;
   height: 67px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-decoration: none; }
+  text-decoration: none;
+  width: 67px; }
   .menu-tab:link {
     color: #444; }
   .menu-tab span {
@@ -227,7 +223,7 @@ input[type="email"] {
     text-align: center; }
   .menu-tab.active {
     border: solid 1px #ddd;
-    border-bottom-color: transparent; }
+    border-bottom-color: #fff; }
   .menu-tab.arroz {
     background-position-x: -134px; }
   .menu-tab.comida-rapida {
