@@ -116,43 +116,42 @@ input[type="email"] {
 
   }
 
-  &.btn-icon {
-    position: relative;
-    padding-left: 30px;
-
-    &:before {
-      background-image: url("../images/sprites.png");
-      background-position-y: -67px;
-      display: block;
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      top: 50%;
-      margin-top: -6px;
-      left: 10px;
-    }
-
-    &.icon-phone-white:before {
-      background-position-x: -36px;
-    }
-
-    &.icon-phone:before {
-      background-position-x: 0;
-    }
-
-    &.icon-map:before {
-      background-position-x: -12px;
-    }
-
-    &.icon-waze:before {
-      background-position-x: -24px;
-    }
-  }
-
-
   &:link {
     color: $black;
+  }
+}
+
+.btn-icon {
+  position: relative;
+  padding-left: 30px;
+
+  &:before {
+    background-image: url("../images/sprites.png");
+    background-position-y: -67px;
+    display: block;
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    margin-top: -6px;
+    left: 10px;
+  }
+
+  &.icon-phone-white:before {
+    background-position-x: -36px;
+  }
+
+  &.icon-phone:before {
+    background-position-x: 0;
+  }
+
+  &.icon-map:before {
+    background-position-x: -12px;
+  }
+
+  &.icon-waze:before {
+    background-position-x: -24px;
   }
 }
 
@@ -327,9 +326,19 @@ input[type="email"] {
     text-decoration: none;
     text-transform: uppercase;
 
+    &:before {
+      width: 18px;
+      height: 18px;
+      margin-top: -9px;
+    }
+
     &.fb {
       background-color: #3b5998;
       margin-right: 20px;
+
+      &:before {
+        background-position-x: -48px;
+      }
     }
 
     &.ig {
@@ -342,6 +351,10 @@ input[type="email"] {
         radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
         radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
         linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+
+      &:before {
+        background-position-x: -66px;
+      }
     }
   }
 }
