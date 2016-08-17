@@ -102,7 +102,7 @@ input[type="email"] {
   font-size: 1em;
   height: 36px;
   line-height: 36px;
-  padding: 0 20px;
+  padding: 0 10px;
   text-decoration: none;
 
   &.secondary {
@@ -113,12 +113,46 @@ input[type="email"] {
     &:link {
       color: $white;
     }
+
+  }
+
+  &.btn-icon {
+    position: relative;
+    padding-left: 30px;
+
+    &:before {
+      background-image: url("../images/sprites.png");
+      background-position-y: -67px;
+      display: block;
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 50%;
+      margin-top: -6px;
+      left: 10px;
+    }
+
+    &.icon-phone-white:before {
+      background-position-x: -36px;
+    }
+
+    &.icon-phone:before {
+      background-position-x: 0;
+    }
+
+    &.icon-map:before {
+      background-position-x: -12px;
+    }
+
+    &.icon-waze:before {
+      background-position-x: -24px;
+    }
   }
 
 
   &:link {
     color: $black;
-    padding: 0 10px;
   }
 }
 
@@ -130,6 +164,15 @@ input[type="email"] {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+
+    .section-title {
+      margin-right: 20px;
+    }
+
+    .btn {
+      flex: 1;
+      text-align: center;
+    }
   }
 }
 
@@ -179,6 +222,10 @@ input[type="email"] {
 
 .contact {
   text-align: center;
+
+  .btn {
+    margin: 0 5px
+  }
 }
 
 .logo {
