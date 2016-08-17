@@ -110,24 +110,6 @@ input[type="email"] {
 .section-title {
   margin: 0; }
 
-.encuesta {
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden; }
-  .encuesta .page {
-    padding: 0; }
-  .encuesta iframe {
-    bottom: 0px;
-    height: 100%;
-    left: 0px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    overflow: hidden;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    width: 100%; }
-
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -242,10 +224,6 @@ input[type="email"] {
   padding: 20px;
   width: 100%;
   word-break: break-word; }
-  @media (min-width: 992px) {
-    .tablet .page {
-      max-width: none;
-      width: 80%; } }
 
 .social-media {
   display: -webkit-box;

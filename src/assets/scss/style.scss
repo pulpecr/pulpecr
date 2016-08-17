@@ -180,29 +180,6 @@ input[type="email"] {
   margin: 0;
 }
 
-.encuesta {
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-
-  .page {
-    padding: 0;
-  }
-
-  iframe {
-    bottom: 0px;
-    height: 100%;
-    left: 0px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    overflow: hidden;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    width: 100%;
-  }
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -333,13 +310,6 @@ input[type="email"] {
   padding: 20px;
   width: 100%;
   word-break: break-word;
-
-  .tablet & {
-    @include mq('md') {
-      max-width: none;
-      width: 80%;
-    }
-  }
 }
 
 .social-media {
