@@ -24,15 +24,17 @@
 
 // Variables
 $black: #444;
-$orage: #F26821;
-$white: #fff;
+$gray-dark: #777;
 $gray: #ddd;
-$gray-dark: #ccc;
-$green: #9cc03b;
+$green: #61D41D;
+$orange: #F26821;
+$white: #fff;
+
 $base-radius: 3px;
 $subscribe-height: 38px;
 $text-color: $black;
 $border-radius: 2px;
+$spacing: 10px;
 
 // Real deal!
 
@@ -42,22 +44,22 @@ $border-radius: 2px;
 
 
 html, body {
+  background-color: rgba($black, 0.03);
   box-sizing: border-box;
   line-height: 1.5;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Montserrat', sans-serif;;
   font-size: 16px;
   margin: 0;
   padding: 0;
 
 }
 
-
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Amaranth', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: normal;
 }
 
@@ -75,7 +77,7 @@ li {
 
 a {
   &:link {
-    color: $orage;
+    color: $orange;
   }
   &:hover {
     text-decoration: none;
@@ -88,8 +90,8 @@ input[type="email"] {
   border: none;
   box-shadow: 0 0 0 1px hsla(0, 0, 0, 0.25);
   float: left;
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 1em;
+  font-family: 'Montserrat', sans-serif;;
+  font-size: 90%;
   height: 36px;
   line-height: 36px;
   padding: 0 10px;
@@ -103,7 +105,6 @@ input[type="email"] {
   box-shadow: 0 0 0 1px $black;
   color: $black;
   display: inline-block;
-  font-family: 'Amaranth', sans-serif;
   font-size: 1em;
   height: 36px;
   line-height: 36px;
@@ -126,21 +127,25 @@ input[type="email"] {
   }
 }
 
+#icon {
+  background-image: url("../images/sprites.png");
+  background-position-y: -67px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+}
+
 .btn-icon {
-  position: relative;
   padding-left: 30px;
+  position: relative;
 
   &:before {
-    background-image: url("../images/sprites.png");
-    background-position-y: -67px;
-    display: block;
-    content: "";
-    position: absolute;
-    width: 12px;
+    @extend #icon;
     height: 12px;
-    top: 50%;
-    margin-top: -6px;
     left: 10px;
+    margin-top: -6px;
+    width: 12px;
   }
 
   &.icon-phone-white:before {
@@ -160,241 +165,162 @@ input[type="email"] {
   }
 }
 
-.menu {
-  margin-bottom: 20px;
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-
-    .section-title {
-      margin-right: 20px;
-    }
-
-    .btn {
-      flex: 1;
-      font-size: 14px;
-      text-align: center;
-
-      @include mq("xs") {
-        font-size: inherit;
-      }
-    }
-  }
-}
-
-.section-title {
-  margin: 0;
+.contact__actions {
+  margin-top: $spacing * 4;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+  margin-bottom: $spacing * 2;
 
-.nav {
-  a {
-    margin-left: 20px;
-    text-decoration: none;
-
-    &:link, &:visited {
-      color: $black;
-    }
+  h1 {
+    margin: 0;
   }
 }
 
-.contact {
-  text-align: center;
+.home__info {
+  background-color: $white;
+  padding: $spacing * 2;
 
-  .btn {
-    margin: 0 5px;
+  @include mq("sm") {
+    box-shadow: 3px 0 40px 0 rgba($black, 0.5);
+    height: 100%;
+    position: fixed;
+    width: 45%;
+  }
+
+  @include mq("md") {
+    padding: $spacing * 4;
+    width: 400px;
+  }
+}
+
+.instagram__feed {
+  padding: 1px $spacing * 4 0;
+
+  @include mq("sm") {
+    margin-left: 45%;
+  }
+
+  @include mq("md") {
+    margin-left: 400px;
+  }
+}
+
+.instagram__slider-item,
+.instagram__feed-item {
+
+  img {
+    display: block;
+  }
+}
+
+.instagram__feed-item {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba($black, 0.23);
+  background-color: $white;
+  color: $gray-dark;
+  border-radius: $border-radius;
+  margin: $spacing * 4 auto;
+  padding: $spacing * 2;
+  width: 100%;
+
+  @include mq("md") {
+    width: 600px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    font-size: 90%;
+    margin-bottom: 0;
+  }
+}
+
+.instagram__slider {
+  margin-bottom: $spacing * 2;
+}
+
+.instagram__slider-item {
+  height: 100%;
+  width: 100%;
+
+  img {
+    margin: auto;
+    height: 100%;
   }
 }
 
 .logo {
-  height: 50px;
-}
-
-.item-name {
-  flex: 3
-}
-
-.item-price {
-  flex: 1;
-  font-weight: bold;
-  text-align: right;
-  white-space: nowrap;
-
-  &::first-letter {
-    font-size: 12px;
-    font-weight: normal;
-  }
-}
-
-.menu-item {
-  align-items: flex-end;
-  border-bottom: solid 1px $gray;
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 0;
-
-  &:last-child {
-    border-bottom-color: transparent;
-  }
-}
-
-.menu-tabs-panel {
-  display: none;
-
-  &.active {
-    display: block;
-  }
-}
-
-.menu-tabs {
-  display: flex;
-}
-
-.menu-tabs-sections {
-  border: solid 1px $gray;
-  margin-top: -1px;
-  padding: 20px;
-}
-
-.menu-tab {
-  background: url('../images/sprites.png') no-repeat;
-  color: $text-color;
-  display: flex;
-  font-family: 'Amaranth', sans-serif;
-  font-size: 12px;
-  height: 67px;
-  justify-content: center;
-  text-decoration: none;
-  width: 67px;
-
-  @include mq("xs") {
-    font-size: 13px;
-  }
-
-
-  &:link {
-    color: $black;
-  }
-
-  span {
-    align-self: flex-end;
-    margin-bottom: 5px;
-    pointer-events: none;
-    text-align: center;
-  }
-
-  &.active {
-    border: solid 1px $gray;
-    border-bottom-color: $white;
-  }
-
-  &.casados {
-    background-position-x: -3px;
-
-    @include mq("xs") {
-      background-position-x: 0px;
-    }
-  }
-
-
-  &.arroz {
-    background-position-x: -137px;
-
-    @include mq("xs") {
-      background-position-x: -134px;
-    }
-  }
-
-  &.comida-rapida {
-    background-position-x: -204px;
-
-    @include mq("xs") {
-      background-position-x: -201px;
-    }
-  }
-
-  &.sopas {
-    background-position-x: -71px;
-
-    @include mq("xs") {
-      background-position-x: -67px;
-    }
-
-  }
-
-  &.especiales {
-    background-position-x: -271px;
-
-    @include mq("xs") {
-      background-position-x: -268px;
-    }
-  }
-}
-
-.menu-subtitle {
-  margin-top: 0;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
 }
 
 .page {
   margin: 0 auto;
-  max-width: 500px;
-  padding: 20px 10px;
-  width: 100%;
-  word-break: break-word;
-
-  @include mq("xs") {
-    padding: 20px;
-  }
 }
 
 .social-media {
   display: flex;
-  margin: 20px 0;
+  flex-direction: column;
 
   a {
-    color: $white;
-    display: block;
-    flex: 1;
+    align-items: flex-end;
+    color: $black;
+    display: flex;
+    flex-direction: column;
     font-size: 12px;
     font-weight: bold;
-    padding: 7px;
-    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    margin: $spacing 0;
 
     &:before {
       width: 18px;
       height: 18px;
-      margin-top: -9px;
     }
 
-    &.fb {
+    .icn {
+      display: block;
+      width: 32px;
+      height: 32px;
+      margin-bottom: $spacing / 2;
+      position: relative;
+
+
+      &:before {
+        @extend #icon;
+        height: 18px;
+        left: 7px;
+        margin-top: -9px;
+        width: 18px;
+      }
+    }
+
+    .fb {
       background-color: #3b5998;
-      margin-right: 20px;
 
       &:before {
         background-position-x: -48px;
       }
     }
 
-    &.ig {
+    .ig {
       background:
-        radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
-        radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
-        radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
-        radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
-        radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
-        radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
-        radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
-        linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+      radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
+      radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+      radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+      radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+      radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+      radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+      radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+      linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 
       &:before {
         background-position-x: -66px;
@@ -404,7 +330,7 @@ input[type="email"] {
 }
 
 .subscribe {
-  background-color: orange;
+  background-color: $orange;
   border-radius: $base-radius;
   color: $white;
   padding: 20px;
