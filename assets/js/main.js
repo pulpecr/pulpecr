@@ -6,11 +6,12 @@
   var ig = (function() {
     function load() {
       $.ajax({
-        url: 'https://api.instagram.com/v1/users/self/media/recent/?count=12&access_token=1984275473.79a23b0.d777ba026890422aa89c4fae80f65153'
+        url: 'https://api.instagram.com/v1/users/self/media/recent/?count=12&access_token=1984275473.79a23b0.d777ba026890422aa89c4fae80f65153',
+        dataType: 'jsonp',
       })
-        .done(function(res) {
-          renderFeed(res.data);
-        });
+      .done(function(res) {
+        renderFeed(res.data);
+      });
     }
 
     function renderPost(post) {
